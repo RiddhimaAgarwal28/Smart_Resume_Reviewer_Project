@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCL Hackathon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+</head>
+<body>
+    <div class="container">
+    <h1>📄 Smart Resume Reviewer</h1>
+
+    <form id="resumeForm">
+      <label for="role">Target Job Role:</label>
+      <input type="text" id="role" name="role" placeholder="e.g. Data Scientist" required>
+
+      <label for="jd">Optional Job Description:</label>
+      <textarea id="jd" name="jd" rows="4" placeholder="Paste JD here..."></textarea>
+
+      <label for="resumeFile">Upload Resume (PDF/TXT):</label>
+      <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.txt">
+
+      <label for="resumeText">Or Paste Resume Text:</label>
+      <textarea id="resumeText" name="resumeText" rows="6"></textarea>
+
+      <button type="submit">🔎 Review Resume</button>
+    </form>
+
+    <div id="loading" class="hidden">Analyzing resume... ⏳</div>
+
+    <div id="results" class="hidden">
+      <h2>Feedback</h2>
+      <div id="feedback"></div>
+
+      <h2>Skill Match</h2>
+      <p><strong>Present:</strong> <span id="present"></span></p>
+      <p><strong>Missing:</strong> <span id="missing"></span></p>
+
+      <h2>Improved Resume</h2>
+      <pre id="improved"></pre>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

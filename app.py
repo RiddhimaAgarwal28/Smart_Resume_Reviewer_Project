@@ -7,7 +7,7 @@ import google.generativeai as genai
 
 # Configure Gemini API
 GOOGLE_API_KEY = ""  # replace with your actual Gemini API key
-genai.configure(api_key=GOOGLE_API_KEY)
+genai.configure(api_key=os.environ.get("MY_API_KEY"))
 
 app = Flask(__name__)
 CORS(app)  # allow requests from frontend

@@ -5,3 +5,4 @@ PyMuPDF
 python-dotenv
 waitress
 gunicorn
+google-generativeai

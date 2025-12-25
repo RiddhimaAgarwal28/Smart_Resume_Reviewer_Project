@@ -18,14 +18,14 @@
 - Returns a **structured JSON response** for reliable frontend rendering
 - Dynamic UI updates using JavaScript (no page reloads)
 - Clean, responsive, and user-friendly interface
-
+  
 ---
 
 ## 🛠 Tech Stack
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** Python, Flask, Flask-CORS  
-- **AI Integration:** Google Gemini API (`gemini-1.5-flash`)  
-
+- **AI Integration:** Google Gemini API (`gemini-1.5-flash`)
+  
 ---
 
 ## 🗂 Project Structure
@@ -38,10 +38,13 @@ requirements.txt → dependencies
 ---
 
 ## ▶️ Run Locally
+
 ```bash
 pip install -r requirements.txt
 export MY_API_KEY=your_gemini_api_key
 python app.py
+```
+
 Open in browser:
 http://127.0.0.1:5000/
 
@@ -51,7 +54,5 @@ http://127.0.0.1:5000/
 To build a practical AI-driven resume review tool while gaining hands-on experience with Flask, file handling, frontend–backend integration, and generative AI.
 
 ---
-
-⭐ If you find this project useful, feel free to star the repository!
 
 ⭐ If you find this project useful, feel free to star the repository!

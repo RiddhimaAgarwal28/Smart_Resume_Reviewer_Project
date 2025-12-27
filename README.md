@@ -29,10 +29,12 @@
 ---
 
 ## 🗂 Project Structure
+```
 templates/ → index.html
 static/ → style.css, script.js
 app.py → Flask backend & AI logic
 requirements.txt → dependencies
+```
 
 
 ---
@@ -56,3 +58,4 @@ To build a practical AI-driven resume review tool while gaining hands-on experie
 ---
 
 ⭐ If you find this project useful, feel free to star the repository!
+

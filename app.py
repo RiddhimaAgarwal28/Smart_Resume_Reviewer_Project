@@ -18,6 +18,8 @@ def home():
 
 @app.route("/api/review", methods=["POST"])
 def review_resume():
+    print("FORM DATA:", request.form)
+print("FILES DATA:", request.files)
     role = request.form.get("role")
     jd = request.form.get("jd", "")
     resume_text = ""

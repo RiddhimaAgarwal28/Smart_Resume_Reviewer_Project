@@ -36,9 +36,8 @@ def review_resume():
                 try:
                     import PyPDF2
                     reader = PyPDF2.PdfReader(file)
-                    resume_text = " ".join(
-                        [page.extract_text() for page in reader.pages if page.extract_text()]
-                    )
+                    resume_text = " ".join(extracted_pages)
+                    print("EXTRACTED RESUME TEXT LENGTH:", len(resume_text))
                 except Exception as e:
                     return jsonify({"error": f"Failed to parse PDF: {str(e)}"}), 400
             else:

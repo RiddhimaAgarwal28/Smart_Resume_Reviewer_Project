@@ -35,10 +35,19 @@ def review_resume():
             elif ext == "pdf":
                 try:
                     import PyPDF2
+                    print("PyPDF2 imported successfully")
                     reader = PyPDF2.PdfReader(file)
+                    print("PDF reader created")
+                    extracted_pages = []
+                    for page in reader.pages:
+                        text = page.extract_text()
+                        if text:
+                            extracted_pages.append(text)
+
                     resume_text = " ".join(extracted_pages)
                     print("EXTRACTED RESUME TEXT LENGTH:", len(resume_text))
                 except Exception as e:
+                    print("PDF PARSE ERROR:", str(e))
                     return jsonify({"error": f"Failed to parse PDF: {str(e)}"}), 400
             else:
                 return jsonify({"error": "Unsupported file format"}), 400

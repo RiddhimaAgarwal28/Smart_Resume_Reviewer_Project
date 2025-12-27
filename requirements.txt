@@ -1,6 +1,6 @@
 Flask
 flask-cors
-openai
+PyPDF2==3.0.1
 PyMuPDF
 python-dotenv
 waitress

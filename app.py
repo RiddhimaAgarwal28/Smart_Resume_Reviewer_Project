@@ -58,7 +58,7 @@ def review_resume():
         return jsonify({"error": "Role and resume text/file required"}), 400
 
     # Call Gemini API
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-1.5-pro")
     prompt = f"""
     You are an AI resume reviewer.
     Target Role: {role}

@@ -3,12 +3,10 @@ import json
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
-import google.generativeai as genai
+from google import genai
 
-# Configure Gemini API
-GOOGLE_API_KEY = ""  # replace with your actual Gemini API key
-genai.configure(api_key=os.environ.get("MY_API_KEY"))
-
+# Create Gemini client using API key from environment
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 app = Flask(__name__)
 CORS(app)  # allow requests from frontend
 
@@ -58,7 +56,6 @@ def review_resume():
         return jsonify({"error": "Role and resume text/file required"}), 400
 
     # Call Gemini API
-    model = genai.GenerativeModel("gemini-pro")
     prompt = f"""
     You are an AI resume reviewer.
     Target Role: {role}
@@ -73,8 +70,12 @@ def review_resume():
     """
 
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model="gemini-1.5-pro",
+            contents=prompt
+        )
         text_response = response.text.strip()
+
 
         print("Gemini raw response:\n", text_response)  # debug log
 

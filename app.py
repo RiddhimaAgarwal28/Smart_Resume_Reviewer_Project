@@ -71,7 +71,7 @@ def review_resume():
 
     try:
         response = client.models.generate_content(
-            model="gemini-1.5-pro",
+            model="gemini-1.5-flash",
             contents=prompt
         )
         text_response = response.text.strip()

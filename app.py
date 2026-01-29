@@ -111,13 +111,15 @@ def review_resume():
 
         return jsonify(safe_data)
 
-    except Exception as e:
-        return jsonify({
-            "feedback": f"Error while generating response: {str(e)}",
-            "present": [],
-            "missing": [],
-            "improved_resume": ""
-        }), 500
+except Exception as e:
+    print("GEMINI ERROR:", str(e))   # <-- ADD THIS LINE
+    return jsonify({
+        "feedback": f"Error while generating response: {str(e)}",
+        "present": [],
+        "missing": [],
+        "improved_resume": ""
+    }), 500
+
 
 
 if __name__ == "__main__":
